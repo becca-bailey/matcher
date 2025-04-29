@@ -1,5 +1,5 @@
 type MatcherFn = (value: any) => boolean;
-type ValueType = boolean | string | number | MatcherFn;
+export type ValueType = boolean | string | number | MatcherFn;
 
 type Matchers = {
   [key: string]: ValueType;
@@ -10,7 +10,7 @@ function anything(): MatcherFn {
 }
 
 function any(
-  matchType: String | Number | Boolean | Object | Function
+  matchType: string | number | boolean | object | Function
 ): MatcherFn {
   return function (value: ValueType) {
     switch (matchType) {
